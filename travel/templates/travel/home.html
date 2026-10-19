@@ -1,0 +1,370 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zam Zam Tour &amp; Travels – Hajj &amp; Umrah Packages</title>
+
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}?v=1792156812">
+</head>
+<body>
+
+<header class="top">
+    <a class="brand" href="/">
+        <span class="logo">☪</span>
+        <span>
+            <b>Zam Zam</b>
+            <small>Tour &amp; Travels</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" type="button"
+        aria-label="Open navigation"
+        data-open-label="Open navigation"
+        data-close-label="Close navigation"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav">
+        <a href="/" class="on">Home</a>
+        <a href="#packages">Packages</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="tools">
+        <form method="get" action="/">
+            <select name="lang" aria-label="Language">
+                <option value="en" selected>English</option>
+                <option value="bn">বাংলা</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </form>
+
+        <a class="wa" href="https://wa.me/917439805126"
+           target="_blank" rel="noopener">WhatsApp Us</a>
+
+        <a class="user" href="#contact" aria-label="Contact">👤</a>
+    </div>
+</header>
+
+<script>
+(() => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.getElementById('site-nav');
+    const header = document.querySelector('.top');
+
+    if (!menuToggle || !siteNav || !header) return;
+
+    const setMenuOpen = (open) => {
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute(
+            'aria-label',
+            open ? menuToggle.dataset.closeLabel : menuToggle.dataset.openLabel
+        );
+        header.classList.toggle('menu-open', open);
+    };
+
+    menuToggle.addEventListener('click', () => {
+        setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    siteNav.addEventListener('click', (event) => {
+        if (event.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setMenuOpen(false);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!header.contains(event.target)) setMenuOpen(false);
+    });
+})();
+</script>
+
+<section class="hero">
+    <div class="hero-video">
+        <video autoplay loop controls preload="auto" playsinline
+            aria-label="Zam Zam – Your Journey to the Holy Land">
+            <source
+                src="{% static 'uploads/hero-videos/55459c3880638acf87070936d8e8eb9c.mp4' %}"
+                type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+        <button type="button" class="sound-toggle" hidden>
+            Play with sound
+        </button>
+    </div>
+
+    <div class="hero-slider" id="slider" tabindex="0"
+        role="region" aria-roledescription="carousel"
+        aria-label="Promotions">
+
+        <article class="slide active" aria-hidden="false"
+            style="background-image:url('{% static 'uploads/hero-banners/9414f2ee01b9aa68a08906ae67096b17.png' %}')">
+            <div class="slide-in"></div>
+        </article>
+
+        <article class="slide" aria-hidden="true"
+            style="background-image:url('{% static 'uploads/hero-banners/96b26df89c8992c4aead7eb5f188e754.png' %}')">
+            <div class="slide-in"></div>
+        </article>
+
+        <article class="slide" aria-hidden="true"
+            style="background-image:url('{% static 'uploads/hero-banners/96d521640cb3ed2e54e0263ee8c66e79.jpg' %}')">
+            <div class="slide-in"></div>
+        </article>
+
+        <button class="arrow prev" aria-label="Previous slide">‹</button>
+        <button class="arrow next" aria-label="Next slide">›</button>
+
+        <div class="dots">
+            <button aria-label="Go to slide 1" class="on"></button>
+            <button aria-label="Go to slide 2"></button>
+            <button aria-label="Go to slide 3"></button>
+        </div>
+    </div>
+</section>
+
+<section class="wrap">
+    <div class="marqueeraj" role="region" aria-label="প্রয়োজনীয় ডকুমেন্টস">
+        <div class="marqueeraj-track">
+            <span>
+                🗂️ কি কি ডকুমেন্টস প্রয়োজন &nbsp;•&nbsp;
+                ভ্যালিড পাসপোর্ট &nbsp;•&nbsp;
+                আধার কার্ড, নমিনী হাজী &nbsp;•&nbsp;
+                ভোটার কার্ড, প্যান কার্ড &nbsp;•&nbsp; ২ কপি ফটো &nbsp;•&nbsp;
+            </span>
+
+            <span aria-hidden="true">
+                🗂️ কি কি ডকুমেন্টস প্রয়োজন &nbsp;•&nbsp;
+                ভ্যালিড পাসপোর্ট &nbsp;•&nbsp;
+                আধার কার্ড, নমিনী হাজী &nbsp;•&nbsp;
+                ভোটার কার্ড, প্যান কার্ড &nbsp;•&nbsp; ২ কপি ফটো &nbsp;•&nbsp;
+            </span>
+        </div>
+    </div>
+
+    <div class="info2">
+        <div class="infobox">
+            <h3>প্যাকেজে কি কি থাকছে</h3>
+            <ul>
+                <li>যাওয়া - আসা টিকিট, ভিসা, হোটেল, থাকার ব্যবস্থা, বুফে সিস্টেমে সুস্বাদু বাঙালী খাবার।</li>
+                <li>জিয়ারত ১দিন মক্কা ও ১দিন মদিনা, ওমরাহ ভিসা ইন্সুরেন্স সাথে।</li>
+                <li>জম জম পানি ৫ লিটার, ১টি সাইড ব্যাগ, ১টি জুতার ব্যাগ, ১টি তসবিহ</li>
+            </ul>
+        </div>
+
+        <div class="infobox offer">
+            <h3>রমজান মাসের স্পেশাল অফার</h3>
+            <ul>
+                <li>প্রথম ১৫ দিন ১৩৫,০০০</li>
+                <li>শেষ ১৫ দিন ১৪৫,০০০ (ঈদের পরে রিটার্ন)</li>
+                <li>৩৪দিন ঈদ নিয়ে ১৭০,০০০ (ঈদের পরে রিটার্ন)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="trust">
+    <div><b>Trusted Agency</b></div>
+    <div>
+        <b>Best Accommodation</b>
+        <small>Near Haram</small>
+    </div>
+    <div>
+        <b>Experienced</b>
+        <small>Guides</small>
+    </div>
+    <div>
+        <b>24/7</b>
+        <small>Support</small>
+    </div>
+</section>
+
+<section id="packages" class="wrap">
+    <div class="row">
+        <div>
+            <h2 class="h">Our Hajj &amp; Umrah Packages</h2>
+            <p class="muted">Choose the perfect package for your spiritual journey</p>
+        </div>
+        <a class="btn line" href="#packages">View All Packages</a>
+    </div>
+
+    <div class="grid4">
+
+        <div class="card">
+            <div class="img">
+                <img src="{% static 'uploads/packages/0a9b1d37156aa6fd6aaa21495eb475dc.png' %}"
+                     alt="Silver Package" loading="lazy">
+            </div>
+            <h3>Silver Package</h3>
+            <div class="cf">
+                <ul>
+                    <li>Makkah Hotel: 700–1000 meters</li>
+                    <li>Madinah Hotel: 700–1000 meters</li>
+                    <li>Hajj &amp; Umrah Ziyarat included</li>
+                </ul>
+                <div class="price">
+                    <small>Starting from</small>
+                    <b>₹100,000</b>
+                    <small>Per Person</small>
+                </div>
+            </div>
+            <a class="btn green" href="#contact">View Details</a>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="{% static 'uploads/packages/b89b0d942f409772c28ae66cac628e86.png' %}"
+                     alt="V.I.P. Package" loading="lazy">
+            </div>
+            <h3>V.I.P. Package</h3>
+            <div class="cf">
+                <ul>
+                    <li>Makkah Hotel: 300-350 meters</li>
+                    <li>Madinah Hotel: 300-350 meters</li>
+                    <li>Hajj, Umrah &amp; Ziyarat Facilities</li>
+                </ul>
+                <div class="price">
+                    <small>Starting from</small>
+                    <b>₹115,000</b>
+                    <small>Per Person</small>
+                </div>
+            </div>
+            <a class="btn green" href="#contact">View Details</a>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="{% static 'uploads/packages/22d96b48753dcd88ee5a3c9f6a85fcf8.jpg' %}"
+                     alt="Diamond Package" loading="lazy">
+            </div>
+            <h3>Diamond Package</h3>
+            <div class="cf">
+                <ul>
+                    <li>Makkah Hotel: 50-150 meters</li>
+                    <li>Madinah Hotel: 50-150 meters</li>
+                    <li>Hajj, Umrah &amp; Ziyarat Facilities</li>
+                </ul>
+                <div class="price">
+                    <small>Starting from</small>
+                    <b>₹175,000</b>
+                    <small>Per Person</small>
+                </div>
+            </div>
+            <a class="btn green" href="#contact">View Details</a>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="{% static 'uploads/packages/0e239a56190b3a32c768e746d37850ca.png' %}"
+                     alt="Golden Package" loading="lazy">
+            </div>
+            <h3>Golden Package</h3>
+            <div class="cf">
+                <ul>
+                    <li>Makkah Hotel: 150-250 meters</li>
+                    <li>Madinah Hotel: 150-250 meters</li>
+                    <li>Hajj, Umrah &amp; Ziyarat Facilities</li>
+                </ul>
+                <div class="price">
+                    <small>Starting from</small>
+                    <b>₹140,000</b>
+                    <small>Per Person</small>
+                </div>
+            </div>
+            <a class="btn green" href="#contact">View Details</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="wrap">
+    <h2 class="h">About Us</h2>
+    <p class="muted">
+        Zam Zam Tour &amp; Travels guides pilgrims to Makkah and Madinah
+        with care and comfort.
+    </p>
+    <a class="btn line" href="#contact">Contact Us</a>
+</section>
+
+<footer id="contact" class="foot">
+    <div>
+        <span class="logo">☪</span>
+        <b>Zam Zam</b>
+        <p>Tour &amp; Travels<br>Your Journey to the Holy Lands</p>
+    </div>
+
+    <div>
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="#packages">Packages</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+    </div>
+
+    <div>
+        <h4>Contact</h4>
+        <a href="tel:+917439805126">+91 74398 05126</a>
+        <a href="https://wa.me/917439805126">WhatsApp Us</a>
+        <a href="mailto:zamzamtoursandtravels5951@gmail.com">
+            zamzamtoursandtravels5951@gmail.com
+        </a>
+        <small>We reply within 24 hours.</small>
+    </div>
+</footer>
+
+<script src="{% static 'assets/slider.js' %}"></script>
+
+<script>
+const heroVideo = document.querySelector('.hero-video video');
+const soundToggle = document.querySelector('.sound-toggle');
+
+if (heroVideo && soundToggle) {
+    const startWithSound = () => {
+        heroVideo.muted = false;
+
+        heroVideo.play()
+            .then(() => {
+                soundToggle.hidden = true;
+            })
+            .catch(() => {
+                soundToggle.hidden = false;
+            });
+    };
+
+    heroVideo.muted = false;
+
+    heroVideo.play()
+        .then(() => {
+            soundToggle.hidden = true;
+        })
+        .catch(() => {
+            soundToggle.hidden = false;
+        });
+
+    soundToggle.addEventListener('click', startWithSound);
+
+    heroVideo.addEventListener('playing', () => {
+        soundToggle.hidden = true;
+    });
+}
+</script>
+
+</body>
+</html>
